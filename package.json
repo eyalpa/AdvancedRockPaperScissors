@@ -1,0 +1,23 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "buildGame": "tsc",
+    "runGame": "yarn buildGame && node dist/src/index.js",
+
+    "runGameVsHuman": "yarn runGame player1Type=Human player2Type=Human",
+    "runGameVsBot": "yarn runGame player1Type=Human player2Type=CPU", 
+    "runGameVsMonkey": "yarn runGame player1Type=Human player2Type=Monkey"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.12"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "tsc": "2.0.4",
+    "typescript": "5.1.6"
+  }
+}
