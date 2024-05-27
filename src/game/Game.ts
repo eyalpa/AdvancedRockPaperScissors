@@ -1,6 +1,6 @@
 import { iPlayer } from '../players/IPlayer.js';
 import { PlayerFactory } from '../players/PlayerFactory.js';
-import { RockPaperScissors } from '../game/RockPaperScissors.js';
+import { GameHelper } from '../utils/gameHelper.js';
 
 export class Game {
   private rounds: number;
@@ -21,7 +21,7 @@ export class Game {
       const player1hands = await this.player1.getHands(1);
       const player2hands = await this.player2.getHands(1);
 
-      const result = RockPaperScissors.compareHands(player1hands, player2hands);
+      const result = GameHelper.compareHands(player1hands, player2hands);
       if (result.result.includes('Player 1 wins the match!')) {
         this.player1Score++;
       } else if (result.result.includes('Player 2 wins the match!')) {
