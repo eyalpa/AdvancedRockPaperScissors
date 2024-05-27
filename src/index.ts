@@ -59,6 +59,14 @@ const startGame = async (
         totalTies++
         break;
     }
+    const remainingRounds = numberOfRounds - (index + 1);
+    if (player1TotalWins > player2TotalWins + remainingRounds) {
+      console.log('Player 1 wins the Total without Doubt!');
+      break;
+    } else if (player2TotalWins > player1TotalWins + remainingRounds) {
+      console.log('Player 2 wins the Total without Doubt!');
+      break;
+    }
   }
 
 
